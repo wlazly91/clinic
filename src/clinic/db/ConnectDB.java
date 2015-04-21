@@ -5,5 +5,5 @@ package clinic.db;
  * @version 1.0
  */
 public class ConnectDB {
-
+	private String connect;
 }
