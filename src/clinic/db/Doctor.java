@@ -1,22 +1,23 @@
 package clinic.db;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
-import org.hibernate.annotations.*;
+import javax.persistence.Table;
 
 /**
  * @author £ukasz Kochanek
  * @version 1.0
  */
 
-
-@Table(appliesTo = "DOCTOR")
+@Entity
+@Table(name = "DOCTOR")
 public class Doctor {
 	
 	@Id
-	@GeneratedValue @Column(name = "ID_DOCTOR")
+	@GeneratedValue 
+	@Column(name = "ID_DOCTOR")
 	private int id;
 	
 	@Column(name = "NAME")
