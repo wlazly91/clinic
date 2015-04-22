@@ -7,10 +7,10 @@
   
     <session-factory>  
         <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>  
-        <property name="connection.url">jdbc:oracle:clinic:@localhost:1521:xe</property>  
+        <property name="connection.url">jdbc:Oracle:thin:@127.0.0.1:1521:clinic</property>  
         <property name="connection.username">medicalclinic</property>  
         <property name="connection.password">zaq12wsx</property>    
-        <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+        <property name="dialect">org.hibernate.dialect.OracleDialect</property>
         
     </session-factory>  
   

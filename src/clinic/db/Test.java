@@ -17,11 +17,9 @@ public class Test {
 	private static SessionFactory factory; 
 	
 	public static void main(String[] args) {
-	try{
-		factory = new AnnotationConfiguration().
-				configure().
-		                   //addPackage("com.xyz") //add package if used.
-				addAnnotatedClass(Doctor.class).buildSessionFactory();
+	try
+	{
+		factory = new AnnotationConfiguration().configure().addAnnotatedClass(Doctor.class).buildSessionFactory();
 	}
 	catch (Throwable ex) { 
 		System.err.println("Failed to create sessionFactory object." + ex);
@@ -30,14 +28,16 @@ public class Test {
 		      
 		      Session session = factory.openSession();
 		      Transaction tx = null;
-		      
 		      tx = session.beginTransaction();
 		      
 		      Doctor doc = new Doctor();
-				doc.setId(1);
-				doc.setName("£ukasz");
-				doc.setSurname("Kochanek");
+		      
+				doc.setName("cos");
+				doc.setSurname("cos");
+				session.save(doc);
 				tx.commit();
 				session.close();
+				
+				System.out.println("!!! nareszcie cholerstwo posz³o");
 			  }
 	   }

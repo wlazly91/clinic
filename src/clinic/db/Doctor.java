@@ -1,10 +1,15 @@
 package clinic.db;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
 
 /**
  * @author £ukasz Kochanek
@@ -13,11 +18,13 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "DOCTOR")
-public class Doctor {
+public class Doctor implements Serializable
+{
 	
-	@Id
-	@GeneratedValue 
+	@Id	
 	@Column(name = "ID_DOCTOR")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="IDDOCTOR") 
+	@SequenceGenerator(name="IDDOCTOR", sequenceName = "IDDOCTOR", allocationSize=1)
 	private int id;
 	
 	@Column(name = "NAME")
