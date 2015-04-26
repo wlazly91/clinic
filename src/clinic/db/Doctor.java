@@ -4,10 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 
@@ -21,10 +18,15 @@ import javax.persistence.Table;
 public class Doctor implements Serializable
 {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5243155107048347637L;
+
 	@Id	
 	@Column(name = "ID_DOCTOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="IDDOCTOR") 
-	@SequenceGenerator(name="IDDOCTOR", sequenceName = "IDDOCTOR", allocationSize=1)
+//	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="IDDOCTOR") 
+//	@SequenceGenerator(name="IDDOCTOR", sequenceName = "IDDOCTOR", allocationSize=1)
 	private int id;
 	
 	@Column(name = "NAME")

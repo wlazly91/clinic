@@ -31,7 +31,7 @@ public class Test {
 		      tx = session.beginTransaction();
 		      
 		      Doctor doc = new Doctor();
-		      
+		      	doc.setId(101);
 				doc.setName("cos");
 				doc.setSurname("cos");
 				session.save(doc);
