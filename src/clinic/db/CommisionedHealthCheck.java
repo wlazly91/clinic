@@ -5,7 +5,10 @@ package clinic.db;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -24,6 +27,8 @@ public class CommisionedHealthCheck implements ObjectDB
 
 	@Id
 	@Column(name = "ID_CHC")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="IDCOMMISIONED_HEALTH_CHECK") 
+	@SequenceGenerator(name="IDCOMMISIONED_HEALTH_CHECK", sequenceName = "IDCOMMISIONED_HEALTH_CHECK", allocationSize=1)
 	private int id;
 	
 	@Column(name = "ID_HEALTH")

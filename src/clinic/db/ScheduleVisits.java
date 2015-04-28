@@ -7,7 +7,10 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -24,6 +27,8 @@ public class ScheduleVisits implements ObjectDB {
 
 	@Id
 	@Column(name = "ID_SV")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="IDSCHULEVISITS") 
+	@SequenceGenerator(name="IDSCHULEVISITS", sequenceName = "IDSCHULEVISITS", allocationSize=1)
 	private int idSV;
 	
 	@Column(name = "ID_DOCTOR")

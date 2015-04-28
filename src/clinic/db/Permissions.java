@@ -4,7 +4,10 @@
 package clinic.db;
 
 import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 /**
  * Klasa reprezentuj¹ca tabelê permissions
@@ -18,6 +21,8 @@ public class Permissions implements ObjectDB {
 
 	@Id
 	@Column(name = "ID_PERMISSIONS")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="IDPERMISSIONS") 
+	@SequenceGenerator(name="IDPERMISSIONS", sequenceName = "IDPERMISSIONS", allocationSize=1)
 	private int idPermissions;
 	
 	@Column(name = "NAME")

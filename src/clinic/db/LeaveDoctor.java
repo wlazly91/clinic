@@ -7,7 +7,10 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -25,6 +28,8 @@ public class LeaveDoctor implements ObjectDB {
 
 	@Id
 	@Column(name = "ID_LEAVE")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="IDLEAVYDOCTOR") 
+	@SequenceGenerator(name="IDLEAVYDOCTOR", sequenceName = "IDLEAVYDOCTOR", allocationSize=1)
 	private int idLeave;
 	
 	@Column(name = "ID_DOCTOR")

@@ -5,7 +5,10 @@ package clinic.db;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -22,6 +25,8 @@ public class PostOffice implements ObjectDB {
 
 	@Id
 	@Column(name = "ID_POSTOFFICE")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="IDPOSTOFFICE") 
+	@SequenceGenerator(name="IDPOSTOFFICE", sequenceName = "IDPOSTOFFICE", allocationSize=1)
 	private int idPostOf;
 	
 	@Column(name = "ID_LOCALITY")

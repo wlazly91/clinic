@@ -5,7 +5,10 @@ package clinic.db;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -23,6 +26,8 @@ public class HistoryDiseases implements ObjectDB {
 
 	@Id
 	@Column(name = "ID_HISTORY")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="IDHISTORYDISEASES") 
+	@SequenceGenerator(name="IDHISTORYDISEASES", sequenceName = "IDHISTORYDISEASES", allocationSize=1)
 	private int idHistory;
 	
 	@Column(name = "ID_PATIENT")
@@ -33,5 +38,61 @@ public class HistoryDiseases implements ObjectDB {
 	
 	@Column(name = "ID_VISITS")
 	private int idVisit;
+	
+	/**
+	 * @param idDiseases the idDiseases to set
+	 */
+	public void setIdDiseases(int idDiseases) {
+		this.idDiseases = idDiseases;
+	}
+	
+	/**
+	 * @param idHistory the idHistory to set
+	 */
+	public void setIdHistory(int idHistory) {
+		this.idHistory = idHistory;
+	}
+	
+	/**
+	 * @param idPatient the idPatient to set
+	 */
+	public void setIdPatient(int idPatient) {
+		this.idPatient = idPatient;
+	}
+	
+	/**
+	 * @param idVisit the idVisit to set
+	 */
+	public void setIdVisit(int idVisit) {
+		this.idVisit = idVisit;
+	}
+	
+	/**
+	 * @return the idDiseases
+	 */
+	public int getIdDiseases() {
+		return idDiseases;
+	}
+	
+	/**
+	 * @return the idHistory
+	 */
+	public int getIdHistory() {
+		return idHistory;
+	}
+	
+	/**
+	 * @return the idPatient
+	 */
+	public int getIdPatient() {
+		return idPatient;
+	}
+	
+	/**
+	 * @return the idVisit
+	 */
+	public int getIdVisit() {
+		return idVisit;
+	}
 	
 }

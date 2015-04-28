@@ -5,7 +5,10 @@ package clinic.db;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -22,6 +25,8 @@ public class SpecjalityDoctor implements ObjectDB {
 	
 	@Id
 	@Column(name = "ID_SPECJALITY_DOCTOR")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="IDSPECJALITYDOCTOR") 
+	@SequenceGenerator(name="IDSPECJALITYDOCTOR", sequenceName = "IDSPECJALITYDOCTOR", allocationSize=1)
 	private int idSpecDoc;
 	
 	@Column(name = "ID_DOCTOR")

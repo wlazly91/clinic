@@ -2,7 +2,10 @@ package clinic.db;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -22,6 +25,8 @@ public class Address implements ObjectDB
 
 	@Id
 	@Column(name = "ID_ADDRESS")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="IDADDRESS") 
+	@SequenceGenerator(name="IDADDRESS", sequenceName = "IDADDRESS", allocationSize=1)
 	private int id;
 	
 	@Column(name = "ID_LOCALITY")
