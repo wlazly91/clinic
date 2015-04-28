@@ -11,7 +11,7 @@
         <property name="connection.username">medicalclinic</property>  
         <property name="connection.password">zaq12wsx</property>    
         <property name="dialect">org.hibernate.dialect.OracleDialect</property>
-        
+        <mapping class="clinic.db.Doctor" />
     </session-factory>  
   
 </hibernate-configuration>  

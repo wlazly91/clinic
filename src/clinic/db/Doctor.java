@@ -33,8 +33,6 @@ public class Doctor implements ObjectDB
 	@Column(name = "SURNAME")
 	private String surname;
 	
-	public Doctor(){}
-	
 	/**
 	 * @param id the id to set
 	 */

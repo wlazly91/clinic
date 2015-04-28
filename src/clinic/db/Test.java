@@ -24,7 +24,7 @@ public class Test {
 				Doctor doc = new Doctor();
 				doc.setName("cos1");
 				doc.setSurname("cos1");
-				session.save(doc);
+				session.save(doc);	
 				tx.commit();
 				session.close();
 				
