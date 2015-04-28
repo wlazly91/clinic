@@ -6,7 +6,6 @@ package clinic.db;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.AnnotationConfiguration;
 
 /**
  * @author £ukasz Kochanek
@@ -14,27 +13,17 @@ import org.hibernate.cfg.AnnotationConfiguration;
  */
 public class Test {
 	
-	private static SessionFactory factory; 
-	
-	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
-	try
-	{
-		factory = new AnnotationConfiguration().configure().addAnnotatedClass(Doctor.class).buildSessionFactory();
-	}
-	catch (Throwable ex) { 
-		System.err.println("Failed to create sessionFactory object." + ex);
-		throw new ExceptionInInitializerError(ex); 
-	}
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+		 
+				Session session = sessionFactory.openSession();
+				//session.beginTransaction();
+				Transaction tx = null;
+				tx = session.beginTransaction();
 		      
-		      Session session = factory.openSession();
-		      Transaction tx = null;
-		      tx = session.beginTransaction();
-		      
-		      Doctor doc = new Doctor();
-		      	doc.setId(101);
-				doc.setName("cos");
-				doc.setSurname("cos");
+				Doctor doc = new Doctor();
+				doc.setName("cos1");
+				doc.setSurname("cos1");
 				session.save(doc);
 				tx.commit();
 				session.close();

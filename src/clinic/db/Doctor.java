@@ -19,10 +19,6 @@ import javax.persistence.Table;
 @Table(name = "DOCTOR")
 public class Doctor implements ObjectDB
 {
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 5243155107048347637L;
 
 	@Id	
