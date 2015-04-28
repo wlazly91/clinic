@@ -1,7 +1,5 @@
 package clinic.db;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -9,13 +7,14 @@ import javax.persistence.Table;
 
 
 /**
+ * Klasa reprezentuje lekarzy 
  * @author £ukasz Kochanek
  * @version 1.0
  */
 
 @Entity
 @Table(name = "DOCTOR")
-public class Doctor implements Serializable
+public class Doctor implements ObjectDB
 {
 	
 	/**
