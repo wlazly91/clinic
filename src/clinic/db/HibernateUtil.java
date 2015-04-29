@@ -1,6 +1,3 @@
-/**
- * 
- */
 package clinic.db;
 
 import org.hibernate.SessionFactory;
