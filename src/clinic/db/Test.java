@@ -7,6 +7,9 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
+import clinic.db.Doctor;
+import clinic.db.HibernateUtil;
+
 /**
  * @author £ukasz Kochanek
  * @version 1.0
